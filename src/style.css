@@ -1,0 +1,127 @@
+:root {
+    --color-accent: oklch(65% 50% 0);
+    --border-gray: oklch(80% 3% 200);
+	--border-blue: oklch(70% 0.1 202);
+	--color-header-bg: oklch(72.5% 0.0715 202 / 50%);
+}
+
+html{
+	color-scheme: light dark;
+}
+body {
+    font: 100%/1.5 system-ui; /* From lab 1 */
+    max-width: 100ch; /* step 1 */
+    margin-inline: auto; /* step 1 */
+	padding: 1cm; /* step 1 */
+}
+ 
+nav ul,
+nav il {
+	display: contents; /* step 2.1 */
+}
+
+nav {
+	--border-color: oklch(50% 10% 200 / 40%);
+	
+	display: flex; /*step 2.2 part 1*/
+	margin-bottom: 1em; /*step 2.2 part 2*/
+	border-bottom-width:1px; /*step 2.2 part 3*/
+	border-bottom-style:solid; /*step 2.2 part 3*/
+	
+	border-bottom-color: var(--border-color);
+}
+
+nav a {
+	flex:1; /*step 2.2 part 1*/
+	text-decoration: none;/*step 2.2 part 2*/
+	color: inherit; /*step 2.2 part 2*/
+	text-align: center; /*step 2.2 part 2*/
+	padding: 0.5em; /*step 2.2 part 2*/
+}
+
+nav a.current {
+	border-bottom-width:0.4em; /*step 2.2 task*/
+	border-bottom-style:solid; /*step 2.2 task*/
+	border-bottom-color: var(--border-color);
+	padding-bottom:0.1em; /*step 2.2 task*/
+	font-weight: bold; /*step 2.2 task*/
+}
+
+nav a:hover {
+	border-bottom-width:0.4em; /*step 2.2 task extra*/
+	border-bottom-style:solid; /*step 2.2 task extra*/
+	border-bottom-color:var(--color-accent); /*step 2.2 task extra*/
+	padding-bottom:0.1em; /*step 2.2 task extra*/
+	background-color: color-mix(in oklch, var(--color-accent), canvas 85%);
+}
+
+input,textarea,button {
+    font: inherit; /*step 3.1 schmoopsie.poo@mic.fr*/
+}
+
+/* no grid Step 3.2*/
+/* label, input, textarea, button {
+    display: block;
+}
+input, textarea, button {
+    width: 100%;
+	box-sizing: border-box;
+}
+label {
+    margin-block: 1rem;
+} */
+/* no grid */
+
+form {
+	display: grid; /*step 3.3 part 1*/
+	grid-template-columns: auto 1fr; /*step 3.3 part 1.1*/
+	gap: 1em; /*step 3.3 part 3*/
+}
+form label {
+	display: grid;/*step 3.3 part 2*/
+	grid-template-columns: subgrid;/*step 3.3 part 2*/
+}
+#button, label{
+	grid-column: 1 / -1; /*step 3.3 part 2*/
+}
+
+img{
+	max-width: 100%; /*step 4.2*/
+}
+
+.projects {
+	display:grid; /*step 4.3*/
+	grid-template-columns : repeat(auto-fill, minmax(15em, 1fr));/*step 4.3*/
+	min-width: 15em; /*step 4.3*/
+	max-width: 1fr; /*step 4.3*/
+}
+
+article{
+	margin: 10px; /*step 4.3*/
+	display: grid; /*step 4.4*/
+	grid-template-rows: subgrid; /*step 4.4*/
+	grid-row: span 3; /*step 4.4*/
+}
+
+article h2{
+	margin: 0; /*step 4.4*/
+}
+
+h1 {
+	font-size: 400%; /*step 4.5*/
+}
+h1, h2, h3, h4, h5, h6{
+	line-height: 1.1; /*step 4.5*/
+	text-wrap: balance; /*step 4.5*/
+}
+
+.resume{
+	display: grid; /*step 5 free*/
+	grid-template-columns: repeat(2, 1fr); /*step 5 free*/
+	min-width: 25em; /*step 5 free*/
+}
+header{
+	background-color: var(--color-header-bg); /*step 5 free*/
+	font-weight: bold; /*step 5 free*/
+	text-transform: uppercase; /*step 5 free*/
+} 
